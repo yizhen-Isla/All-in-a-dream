@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    width: 1220px;
+    height: 48px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    background-color: cornflowerblue;
+}
+
+.leftMenu{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(218, 18, 201);
+}
+
+.rightMenu{
+    display: flex;
+    justify-content: flex-end; /* 設定靠右對齊 */
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+}
+
+header {
+    background-color:rgba(75, 68, 69, 0.753);
+    height: 48px;
+    width: 100%;
+}
+
+
+#logo{
+    width: 150px;
+    height: 48px;
+    background-color: blueviolet;
+    
+}
+
+
+header a {
+    color: white;
+    text-decoration: none; /* 文字不要有樣式*/
+}
+
+header ul{
+    list-style: none;   /* list前面不要黑點 */
+    right: 50px;
+    line-height: 48px;
+    float:right;
+}
+
+header li{
+    display: inline;
+    margin-right: 30px;
+} 
