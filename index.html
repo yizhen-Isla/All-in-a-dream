@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>夢裡都有</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="product-block_style.css">
+    
+
 </head>
 <body>
     <header>
         <nav>
-            <div class="leftMenu">
-                <h1>
+            <div class="leftMenu" >
+                <h1 style="display: inline;">
                     <a href="index.html" >
-                        <img src="image/夢裡都有icon.png" alt="夢裡都有" id="logo" > 
+                        <img id="logo_Small" src="image/夢裡都有icon.png" alt="夢裡都有"> 
                     </a>
                 </h1>
-                aaa
+                <input type="search" id="search_Top">
             </div>
             <ul class="rightMenu">
                 <li><a href="#">首頁</a></li>
@@ -26,7 +28,93 @@
             </ul>
         </nav>
     </header>
-    
 
+    <main>
+        <div id="header_searchBar">
+            <img id="logo_Large" src="image/夢裡都有icon.png" alt="夢裡都有">
+            <input id="search_main" type="search" placeholder="搜尋" autocomplete="off">
+            <button class="search_Btn">
+                <img class="search_Btn_icon" src="image/magnifying-glass.png" alt="搜尋">
+            </button>
+        </div>
+
+        <div id="background_container">
+            <div id="container">
+                <aside id="menuList">
+                    <ul class="aside_ul">
+                        <li class="aside_li">
+                            <a class="aside_a" href="">家電</a>
+                        </li>
+                        <hr id="Divider">
+                    </ul>
+                </aside>
+                <!-- <img class="advertise" src="image/lemon.jpg" alt="廣告"> -->
+                <div class="slideshow">
+                    <div class="container_slideshow">
+                        <img src="image/1.jpg" alt="" class="slideshow_img">
+                        <img src="image/2.jpg" alt="" class="slideshow_img">
+                        <img src="image/3.jpg" alt="" class="slideshow_img">
+                        <img src="image/4.jpg" alt="" class="slideshow_img">
+                    </div>
+                    <input type="button" name="btn" id="btn_left" class="Btn" value="&lt">
+                    <input type="button" name="btn" id="btn_right" class="Btn" value="&gt">
+                    <div class="bottom_select">
+                        <input type="radio" name="radio_btn" id="radio0" class="radioBtn" checked >
+                        <input type="radio" name="radio_btn" id="radio1" class="radioBtn">
+                        <input type="radio" name="radio_btn" id="radio2" class="radioBtn">
+                        <input type="radio" name="radio_btn" id="radio3" class="radioBtn">
+                    </div>
+                </div>
+                <div id="right_Discount">
+                    <div class="tab-group">
+                        <label  class="Tab_text">今日強檔</label>
+                        <label for="panel-radio1" class="Tab_css">1</label>
+                        <label for="panel-radio2" class="Tab_css">2</label>
+                        <label for="panel-radio3" class="Tab_css">3</label>
+                    </div>
+                    <div class="content-group">
+                        <div class="content content1">
+                            content1
+                        </div>
+                        <div class="content content2">
+                            content2
+                        </div>
+                        <div class="content content3">
+                            content3
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <input type="radio" name="panel-radio" id="panel-radio1" class="panel-control" checked>
+                        <input type="radio" name="panel-radio" id="panel-radio2" class="panel-control">
+                        <input type="radio" name="panel-radio" id="panel-radio3" class="panel-control">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="container_Information">
+            <div id="blank_space"></div>
+            <div id="content_Information">
+                <div class="Information" id="Information1"></div>
+                <div class="Information" id="Information2"></div>
+                <div class="Information" id="Information3"></div>
+                <div class="Information" id="Information4"></div>
+            </div>
+        </div>
+        <div id="product_container">
+            product-grid>.product-block>a>div
+        </div>
+        
+        <div id="background_footer">
+            <footer>
+                
+            </footer>
+        </div>
+        
+
+    </main>
+
+    <script src="right_Discount.js"></script>
+    <script src="Slideshow.js"></script>
 </body>
 </html>

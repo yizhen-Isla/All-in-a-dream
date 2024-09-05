@@ -1,8 +1,13 @@
+/*  加入幻燈片css */
+@import url('Slideshow_style.css');
+
+
 *{
     padding: 0;
     margin: 0;
 }
 
+/* 導覽列------------------------------------------------------------- */
 nav{
     width: 1220px;
     height: 48px;
@@ -34,11 +39,10 @@ header {
 }
 
 
-#logo{
+#logo_Small{
     width: 150px;
     height: 48px;
     background-color: blueviolet;
-    
 }
 
 
@@ -58,3 +62,224 @@ header li{
     display: inline;
     margin-right: 30px;
 } 
+
+#search_Top{
+    margin-left: 40px;
+    vertical-align: 20px;
+    line-height: 30px;
+    width: 350px;
+}
+
+/* 搜尋列------------------------------------------------------------- */
+
+#header_searchBar{
+    height: 100px;
+    width: 1220px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+#logo_Large{
+    margin-right: 100px;
+    width: 350px;
+    height: 100px;
+}
+
+#search_main{
+    width: 350px;
+    height: 35px;
+    top: 50%;
+    border-radius: 5px 0 0 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(192, 192, 192, 0.5);
+    padding-left: 12px;
+    font-size: 16px;
+    
+}
+
+.search_Btn{
+    padding: 5px;
+    width: 40px;
+    height: 35px;
+    border-radius: 0 5px 5px 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(192, 192, 192, 0.5);
+    cursor: pointer;
+}
+
+.search_Btn_icon{
+    width: 18px;
+    height: 15px;
+}
+
+/* 主要廣告與分類欄------------------------------------------------------------- */
+#background_container{
+    width: 100%;
+    height: 370px;
+    background-color: rgba(245, 191, 129, 0.342);
+    z-index: 0;
+}
+
+#container{
+    width: 1220px;
+    height: 370px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+#menuList{
+    width: 200px;
+    height: 490px;
+    background-color: rgba(192, 192, 192, 0.5);
+    z-index: 1;
+}
+
+.aside_ul{
+    list-style: none;
+}
+.aside_li{
+    padding-top: 15px;
+    padding-left: 12px;
+}
+.aside_a{
+    text-decoration: none;
+    color: black;
+}
+
+/* .advertise{
+    width: 800px;
+    height: 370px;
+} */
+.slideshow{
+    width: 800px;
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+}
+
+#right_Discount{
+    width: 220px;   /* 220 */
+    height: 370px;  /* 370 */
+    
+    background-color: chartreuse;
+    border-radius: 25px;
+    
+}
+
+.tab-group{
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #464343;
+}
+
+.Tab_text{
+    width: 35%;
+    line-height: 40px;
+    margin-top: 5px;
+    /* text-align: center; */
+    /* margin-left: 15px; */
+    /* background-color: rgb(32, 102, 79); */
+}
+
+.Tab_css{
+    margin-left: 5px;
+    width: 30px;
+    height: 22px;
+    padding: 0px 0px;
+    display: inline-block;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.content-group{
+    height: 300px;
+    /* border: 1px solid #aaa; */
+}
+
+.content{
+    margin-left: 5px;
+    height: 100%;
+    border: 1px solid #a0a;
+    display: none;
+}
+
+.content.active {
+    display: block; /* 只有带有 active 类的内容显示 */
+}
+
+.panel-group{
+    text-align: center;
+}
+
+
+#container_Information{
+    display: flex;
+    margin: auto;
+    left: 0;
+    top: 0;
+    background-color: cadetblue;
+    width: 1220px;
+    height: 120px;
+}
+
+#blank_space{
+    width: 200px;
+    height: 120px;
+    /* z-index: 5; */
+}
+
+#content_Information{
+    background-color: rgba(255, 0, 0, 0.5);
+    width: 1020px;
+    height: 120px;
+    display: flex;
+    /* background-color: rgba(255, 0, 0, 0.5); */
+}
+
+.Information{
+    width: 280px;
+    height: 120px;
+    border: 2px solid #464343;
+}
+
+#product_container{
+    width: 1220px;
+    height: 900px;
+    background-color: gold;
+    display: flex;
+    margin: auto;
+    left: 0;
+    top: 0;
+}
+
+#background_footer{
+    width: 100%;
+    height: 410px;
+    background-color: rgba(18, 22, 53, 0.877);
+    z-index: 0;
+}
+
+footer{
+    width: 1220px;
+    height: 410px;
+    border: 2px solid #FFF;
+    display: flex;
+    margin: auto;
+    left: 0;
+    top: 0;
+}
+
+
