@@ -5,82 +5,151 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+
+}
+
+body{
+    /* 設定最大寬度 */
+    /* max-width: 1200px;*/
+
+    /* 設定最大高度 */
+    /* max-height: 800px;*/
+
+    /* 禁止橫向滾動 */ 
+    overflow-x: hidden;  
+
+    /* 不能-讓內容居中顯示 */
+    /* margin: auto;     
+    left: 0;
+    right: 0;  */
 }
 
 /* 導覽列------------------------------------------------------------- */
-nav{
+
+/* 固定背景 */
+.TopHeader, .initial_header {
+    width: 100%;
+    height: 48px;
+    background-color:rgba(68, 64, 64, 0.87);
+}
+/* .TopHeader用來控制「固定的最上方Nav」 隱藏顯示 */
+.x {
+    display: none;
+}
+.sticky {
+    background-color:rgb(68, 64, 64);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+
+.myNav{
     width: 1220px;
     height: 48px;
     margin: auto;
     left: 0;
     right: 0;
     display: flex;
-    background-color: cornflowerblue;
 }
 
+/* ----左邊---- */
 .leftMenu{
+    /* position: absolute; */
     width: 50%;
     height: 100%;
-    background-color: rgb(218, 18, 201);
-}
-
-.rightMenu{
     display: flex;
-    justify-content: flex-end; /* 設定靠右對齊 */
-    width: 50%;
-    height: 100%;
-    background-color: blue;
+    align-items: center;
 }
 
-header {
-    background-color:rgba(75, 68, 69, 0.753);
-    height: 48px;
-    width: 100%;
-}
-
-
-#logo_Small{
-    width: 150px;
-    height: 48px;
-    background-color: blueviolet;
-}
-
-
-header a {
+.leftMenu_a {
     color: white;
     text-decoration: none; /* 文字不要有樣式*/
 }
 
-header ul{
-    list-style: none;   /* list前面不要黑點 */
-    right: 50px;
-    line-height: 48px;
-    float:right;
+#logo_Small{
+    width: 150px;
+    height: 45px;
+    margin-top: 5px;
 }
 
-header li{
-    display: inline;
-    margin-right: 30px;
-} 
+#TOP_form{
+    margin-left: 50px;
+    display: flex;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+}
+
 
 #search_Top{
-    margin-left: 40px;
-    vertical-align: 20px;
-    line-height: 30px;
     width: 350px;
+    padding-left: 15px;
+}
+#button_Top{
+    width: 50px;
+    cursor: pointer;
+}
+#search_Top, #button_Top{
+    color: #FFF;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 30px;
+}
+#search_Top:focus, #button_Top:focus{
+    outline: none; /* 點選到時，不要出現外框 */
 }
 
-/* 搜尋列------------------------------------------------------------- */
 
+/* ----右邊---- */
+.rightMenu{
+    width: 50%;
+    height: 45px;
+    display: flex;
+    justify-content: flex-end; /*設定靠右對齊 */
+    list-style: none;   /* list前面不要黑點 */
+    line-height: 48px;
+}
+
+.rightMenu_li{
+    position: relative;
+    width: 80px;
+    text-align: center;
+   
+} 
+
+.rightMenu_li::before{
+    content: '';
+    position: absolute;
+    left: 0;  /* 確保在左側 */
+    top: 10px;
+    bottom: 5px;
+    border-left: 1px solid #ffffff;
+} 
+
+.rightMenu_li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+}
+
+.rightMenu_li a:hover{
+    color: #699e72
+} 
+
+
+
+/* 搜尋列------------------------------------------------------------- */
 #header_searchBar{
-    height: 100px;
     width: 1220px;
+    height: 140px;
     margin: auto;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
-    background-color: aquamarine;
 }
 
 #logo_Large{
@@ -94,12 +163,9 @@ header li{
     height: 35px;
     top: 50%;
     border-radius: 5px 0 0 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(192, 192, 192, 0.5);
+    border: 1px solid rgba(192, 192, 192, 0.5);
     padding-left: 12px;
     font-size: 16px;
-    
 }
 
 .search_Btn{
@@ -107,9 +173,7 @@ header li{
     width: 40px;
     height: 35px;
     border-radius: 0 5px 5px 0;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(192, 192, 192, 0.5);
+    border: 1px solid rgba(192, 192, 192, 0.5);
     cursor: pointer;
 }
 
@@ -118,58 +182,199 @@ header li{
     height: 15px;
 }
 
+/* 小分類欄------------------------------------------------------------- */
+
+/* ----左邊---- */
+#small_Category{
+    width: 1220px;
+    height: 40px;
+    display: flex;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.Left_Category_title{
+    width: 50%;
+    height: 40px;
+    position: relative;
+}
+
+.Merge_Category_title1{
+    width: 195px;
+    height: 40px;
+    background-color: #6e5548;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    padding-left: 5px;
+}
+
+.img_bar{
+    width: 22px;
+    height: 18px;
+}
+
+.Category_text{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin: 0px 20px;
+}
+
+/* ----右邊---- */
+.Right_Category{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+
+.Right_Category li{
+    width: 100px;
+    height: 35px;
+    background-color: rgba(68, 64, 64, 0.582);
+    border-radius: 10px 10px 0 0;
+    margin: 0 2px;
+    position: relative;
+}
+
+.Right_Category li:hover{
+    background-color: rgba(22, 20, 20, 0.74);
+}
+
+.Right_Category a{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fffdfde1;
+}
+
+
+
 /* 主要廣告與分類欄------------------------------------------------------------- */
+
+
+/* ----- 左邊-商品分類 ----- */
+/* 最底背景 */
 #background_container{
     width: 100%;
     height: 370px;
-    background-color: rgba(245, 191, 129, 0.342);
-    z-index: 0;
+    transition: 3s;
 }
 
 #container{
     width: 1220px;
     height: 370px;
+    display: flex;
     margin: auto;
     left: 0;
     right: 0;
-    display: flex;
 }
 
+/* 商品分類 */
 #menuList{
     width: 200px;
     height: 490px;
-    background-color: rgba(192, 192, 192, 0.5);
-    z-index: 1;
+    background-color: #6e5548;
+}
+
+.Merge_Category_title2{
+    width: 200px;
+    height: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 
 .aside_ul{
     list-style: none;
 }
+
 .aside_li{
-    padding-top: 15px;
+    width: 188;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    position: relative;
     padding-left: 12px;
 }
-.aside_a{
-    text-decoration: none;
-    color: black;
+
+.aside_li + .aside_li::before{    /* 分類線 */
+    content: '';
+    position: absolute;
+    border-top: 1px solid #838383be;
+    left: 12px;
+    right: 12px;
+    top: 0;
 }
 
-/* .advertise{
-    width: 800px;
-    height: 370px;
-} */
+
+.aside_a{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 55px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+.aside_li:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.aside_li .aside_a .fa-solid{  /* 分類icon圖片調整 */
+    width: 20px;
+    height: 20px;
+    margin-right: -1.5em;
+    transform: scale(0);
+    transition: .3s;
+}
+
+.aside_li:hover .aside_a .fa-solid{
+    margin-right: 0em;
+    transform: scale(1);
+}
+
+/* 分類子層 */
+.Child_aside_ul{
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 6px;
+    left: 100%;
+    background-color: #6e5548de;;
+    box-shadow: 2px 4px 10px hsla(240, 40%, 15%, .6) ;
+    z-index: 1;
+}
+
+/* .aside_li 跟 .aside_a 按照母層  */
+
+.aside_li:hover >.Child_aside_ul{
+    display: block;
+}
+
+/* ----- 中間-輪播圖 ----- */
 .slideshow{
     width: 800px;
     height: 370px;
     position: relative;
     overflow: hidden;
 }
+/* (其餘的在 Slideshow_style.css 本文件最開頭有import) */
 
+
+/* ----- 右邊-今日強檔 ----- */
 #right_Discount{
-    width: 220px;   /* 220 */
-    height: 370px;  /* 370 */
+    width: 220px;    /* 220 */
+    height: 360px;   /* 370 */
+    margin-top: 5px;
     
-    background-color: chartreuse;
+    background-color: #FFF;
+    /* background-color: chartreuse; */
     border-radius: 25px;
     
 }
@@ -179,29 +384,33 @@ header li{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #464343;
+    /* background-color: #464343; */
+    background-color: #413838;
+    color: #FFF;
 }
 
 .Tab_text{
-    width: 35%;
-    line-height: 40px;
-    margin-top: 5px;
-    /* text-align: center; */
-    /* margin-left: 15px; */
-    /* background-color: rgb(32, 102, 79); */
+    width: 65px;
+    height: 45px;
+    display: flex;
+    align-items: center;
 }
 
 .Tab_css{
-    margin-left: 5px;
     width: 30px;
-    height: 22px;
-    padding: 0px 0px;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 8px;
     display: inline-block;
-    border: 1px solid #aaa;
-    border-bottom: none;
+    border: 2px solid #aaa;
     background-color: rgba(0,0,0,.3);
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
+}
+
+.Tab_css:hover{
+    background-color: rgba(161, 160, 160, 0.486);
 }
 
 .content-group{
@@ -210,18 +419,26 @@ header li{
 }
 
 .content{
-    margin-left: 5px;
+    margin: 5px 10px;
     height: 100%;
     border: 1px solid #a0a;
     display: none;
 }
 
-.content.active {
-    display: block; /* 只有带有 active 类的内容显示 */
+.content_img{
+    width: 100%;
+    height: 200px;
 }
+
 
 .panel-group{
     text-align: center;
+}
+
+.panel-control{
+    position: absolute; /* 位置設定 */
+    opacity: 0;  /* 顯示透明 */
+    z-index: -1;
 }
 
 
@@ -230,7 +447,7 @@ header li{
     margin: auto;
     left: 0;
     top: 0;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     width: 1220px;
     height: 120px;
 }
@@ -238,7 +455,7 @@ header li{
 #blank_space{
     width: 200px;
     height: 120px;
-    /* z-index: 5; */
+    /* display: none; */
 }
 
 #content_Information{
@@ -255,31 +472,165 @@ header li{
     border: 2px solid #464343;
 }
 
-#product_container{
+
+/* 產品------------------------------------------------------------- */
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+
+.bestsellers_container{
     width: 1220px;
-    height: 900px;
-    background-color: gold;
+    height: 300px;
+    background-color: rgb(255, 226, 59);
     display: flex;
+    flex-direction: column;
     margin: auto;
     left: 0;
     top: 0;
 }
 
+
+.bestsellers_TabTitle{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #A6B37D;
+    display: flex;
+}
+
+.bestsellers_ul{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.bestsellers_title{
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+.bestsellers_li{
+    width: 120px;
+    height: 50px;
+    text-align: center;
+}
+
+
+
+.bestsellers_li.selected .bestsellers_text{
+    /* background-color: #603F26; */
+    background-color: #534e4be7;;
+    color: #FFF;
+}
+
+
+
+.bestsellers_text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 100px;
+    height: 30px;
+    /* background-color: #603F26; */
+    border-radius: 25px;
+    position: relative;
+
+}
+
+.oval_frame{
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+
+
+/* 內容 */
+
+.TabContent{
+    display: none;
+}
+
+.TabContent.selected{
+    display: block;
+}
+
+
+.bestsellers_TabContent{
+    width: 100%;
+    height: 250px;
+    background-color: #FEFAE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TabContent{
+    
+}
+
+.TabContent_ul{
+    display: flex;
+}
+
+.TabContent_li{
+    width: 150px;
+    height: 200px;
+    background-color: #FFF;
+    border: 4px solid #AAB396;
+    border-radius: 10px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TabContent_a{
+    text-align: center;
+}
+
+
+.TabContent_img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.original_price{
+    text-decoration: line-through;
+}
+
+.special_price{
+    font-size: 20px;
+}
+
+
+/* 頁尾------------------------------------------------------------- */
 #background_footer{
     width: 100%;
-    height: 410px;
-    background-color: rgba(18, 22, 53, 0.877);
-    z-index: 0;
+    height: 300px;
+    background-color: #AAB396;
 }
 
 footer{
     width: 1220px;
-    height: 410px;
+    height:300px;
     border: 2px solid #FFF;
     display: flex;
     margin: auto;
     left: 0;
     top: 0;
 }
-
-

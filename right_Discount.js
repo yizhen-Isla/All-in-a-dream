@@ -1,4 +1,6 @@
-
+//
+// js寫法：
+//
 let selectedRadio_id = document.querySelector('input[name="panel-radio"]:checked').id;
 let radios = document.querySelectorAll('input[name="panel-radio"]')
 let contents = document.querySelectorAll('.content');
@@ -22,6 +24,8 @@ radios.forEach(radio => {
     });
 });
 
-    
+//
+// jQery寫法：
+//
 
 

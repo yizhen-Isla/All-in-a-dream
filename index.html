@@ -1,54 +1,243 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>夢裡都有</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="product-block_style.css">
-    
 
+    <!-- 思源黑體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon ->  fontawesome -->
+    <script src="https://kit.fontawesome.com/a9eb98558e.js" crossorigin="anonymous"></script>
+    <!-- color-thief 取圖片顏色用 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="leftMenu" >
-                <h1 style="display: inline;">
-                    <a href="index.html" >
-                        <img id="logo_Small" src="image/夢裡都有icon.png" alt="夢裡都有"> 
-                    </a>
-                </h1>
-                <input type="search" id="search_Top">
+    <!-- 導覽列 -->
+    <header class="TopHeader x">
+        <nav class="myNav">
+            <div class="leftMenu">
+                <a class="leftMenu_a" href="index.html" >
+                    <img id="logo_Small" src="image/夢裡都有icon.png" alt="夢裡都有">
+                </a>
+                <form action="" id="TOP_form">
+                    <input type="search" id="search_Top">
+                    <button id="button_Top"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
             <ul class="rightMenu">
-                <li><a href="#">首頁</a></li>
-                <li><a href="#">登入</a></li>
-                <li><a href="#">註冊</a></li>
-                <li><a href="#">購物車</a></li>
+                <li class="rightMenu_li"><a href="#">首頁</a></li>
+                <li class="rightMenu_li"><a href="#">登入</a></li>
+                <li class="rightMenu_li"><a href="#">註冊</a></li>
+                <li class="rightMenu_li"><a href="#">購物車</a></li>
             </ul>
         </nav>
     </header>
+    <div class="initial_header">
+        <div class="myNav">
+            <div class="leftMenu">
+                <a class="leftMenu_a" href="index.html" >
+                    <i class="fa-solid fa-house"></i>
+                    回首頁
+                </a>
+            </div>
+            <ul class="rightMenu">
+                <li class="rightMenu_li"><a href="#">首頁</a></li>
+                <li class="rightMenu_li"><a href="#">登入</a></li>
+                <li class="rightMenu_li"><a href="#">註冊</a></li>
+                <li class="rightMenu_li"><a href="#">購物車</a></li>
+            </ul>
+        </div>
+    </div>
 
     <main>
+        <!-- 搜尋列 -->
         <div id="header_searchBar">
-            <img id="logo_Large" src="image/夢裡都有icon.png" alt="夢裡都有">
+            <img id="logo_Large" src="image/夢裡都有icon_gb.png" alt="夢裡都有">
             <input id="search_main" type="search" placeholder="搜尋" autocomplete="off">
             <button class="search_Btn">
                 <img class="search_Btn_icon" src="image/magnifying-glass.png" alt="搜尋">
             </button>
         </div>
+        <!-- 小分類欄 -->
+        <div id="small_Category">
+            <div class="Left_Category_title">
+                <div class="Merge_Category_title1">
+                    <img src="image/bars-solid.png" alt="" class="img_bar">
+                    <span class="Category_text">商品分類</span>
+                </div>
+            </div>
+            <ul class="Right_Category">
+                <li>
+                    <a href="">重磅新品</a>
+                </li>
+                <li>
+                    <a href="">小資專區</a>
+                </li>
+                <li>
+                    <a href="">圖書影音</a>
+                </li>
+                <li>
+                    <a href="">網站介紹</a>
+                </li>
+                <li>
+                    <a href="">關於我們</a>
+                </li>
 
+            </ul>
+        </div>
+        <!-- 主要廣告與分類欄 -->
+        <!-- 左邊-商品分類 -->
         <div id="background_container">
             <div id="container">
                 <aside id="menuList">
+                    <div class="Merge_Category_title2"></div>
                     <ul class="aside_ul">
                         <li class="aside_li">
-                            <a class="aside_a" href="">家電</a>
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                3C資訊
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">筆記型電腦</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">桌上電腦</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">螢幕</a>
+                                </li>
+                            </ul>
                         </li>
-                        <hr id="Divider">
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-tv"></i>
+                                生活家電
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">冰箱</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">除濕機</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">掃地機</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-hospital"></i>
+                                保健醫療
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">葉黃素</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">維他命</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">成人營養素</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-bottle-droplet"></i>
+                                美妝保養
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">面膜</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">化妝水</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">乳液</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-toilet-paper"></i>
+                                生活用品
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">衛生紙</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">衛生棉</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">紙尿褲</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-couch"></i>
+                                家居餐廚
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">沙發</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">床架</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">層架</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-bowl-food"></i>
+                                食品生鮮
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">罐頭食品</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">泡麵</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">零食</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="aside_li">
+                            <a class="aside_a" href="">
+                                <i class="fa-solid fa-glasses"></i>
+                                時尚精品
+                            </a>
+                            <ul class="Child_aside_ul">
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">女裝</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">男裝</a>
+                                </li>
+                                <li class="aside_li">
+                                    <a href="" class="aside_a">童裝</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </aside>
-                <!-- <img class="advertise" src="image/lemon.jpg" alt="廣告"> -->
+                <!-- 中間-輪播圖 -->
                 <div class="slideshow">
                     <div class="container_slideshow">
                         <img src="image/1.jpg" alt="" class="slideshow_img">
@@ -59,15 +248,16 @@
                     <input type="button" name="btn" id="btn_left" class="Btn" value="&lt">
                     <input type="button" name="btn" id="btn_right" class="Btn" value="&gt">
                     <div class="bottom_select">
-                        <input type="radio" name="radio_btn" id="radio0" class="radioBtn" checked >
+                        <input type="radio" name="radio_btn" id="radio0" class="radioBtn" checked>
                         <input type="radio" name="radio_btn" id="radio1" class="radioBtn">
                         <input type="radio" name="radio_btn" id="radio2" class="radioBtn">
                         <input type="radio" name="radio_btn" id="radio3" class="radioBtn">
                     </div>
                 </div>
+                <!-- 右邊-今日強檔 -->
                 <div id="right_Discount">
                     <div class="tab-group">
-                        <label  class="Tab_text">今日強檔</label>
+                        <label class="Tab_text">今日強檔</label>
                         <label for="panel-radio1" class="Tab_css">1</label>
                         <label for="panel-radio2" class="Tab_css">2</label>
                         <label for="panel-radio3" class="Tab_css">3</label>
@@ -75,6 +265,10 @@
                     <div class="content-group">
                         <div class="content content1">
                             content1
+                            <img src="image/l000001_1703756935.webp" alt="" class="content_img">
+                            <p>今日特賣</p>
+                            <p> Avene 雅漾 舒護活泉水 300mlx3</p>
+                            <p>$1,500 $898</p>
                         </div>
                         <div class="content content2">
                             content2
@@ -89,9 +283,9 @@
                         <input type="radio" name="panel-radio" id="panel-radio3" class="panel-control">
                     </div>
                 </div>
-                
             </div>
         </div>
+
         <div id="container_Information">
             <div id="blank_space"></div>
             <div id="content_Information">
@@ -101,20 +295,521 @@
                 <div class="Information" id="Information4"></div>
             </div>
         </div>
-        <div id="product_container">
-            product-grid>.product-block>a>div
+        <div class="bestsellers_container">
+            <div class="bestsellers_TabTitle">
+                <ul class="bestsellers_ul">
+                    <span class="bestsellers_title">熱銷排行榜</span>
+                    <li class="bestsellers_li selected">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">3C資訊</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">生活家電</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">保健醫療</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">美妝保養</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">生活用品</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">家居餐廚</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">食品生鮮</span>
+                        </a>
+                    </li>
+                    <li class="bestsellers_li">
+                        <a href="" class="bestsellers_text">
+                            <span class="oval_frame">時尚精品</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bestsellers_TabContent">
+                <!-- (熱銷) 3C資訊 -->
+                <div class="TabContent selected">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="image/LG.avif" alt="LG洗衣機" class="TabContent_img">
+                                <p>LG AI智控洗乾衣機</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$80900</span>
+                                    <span class="special_price">$72900</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="image/l000001_1713517924.webp" alt="" class="TabContent_img">
+                                <p>大同10人份電鍋</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$3500</span>
+                                    <span class="special_price">$2999</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 生活家電 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>家電</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 保健醫療 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>保健</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>3</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 美妝保養 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>美妝</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 生活用品 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>生活</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 家居餐廚 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>家居</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 食品生鮮 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>食品</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- (熱銷) 時尚精品 -->
+                <div class="TabContent">
+                    <ul class="TabContent_ul">
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p>時尚</p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price">$</span>
+                                    <span class="special_price">$</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p"></p>
+                                <span class="original_price"></span>
+                                <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="TabContent_li">
+                            <a href="" class="TabContent_a">
+                                <img src="" alt="" class="TabContent_img">
+                                <p></p>
+                                <p class="TabContent_p">
+                                    <span class="original_price"></span>
+                                    <span class="special_price"></span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
         </div>
-        
+
+
+
+
+
         <div id="background_footer">
             <footer>
-                
+
             </footer>
         </div>
-        
+
 
     </main>
 
-    <script src="right_Discount.js"></script>
+    <!-- 匯入jquery -->
+    <script src="jquery.min.js"></script>
+    <!-- 畫面往下移時，置頂nav -->
+    <script src="Top_nav_exchange.js"></script>
+    <!-- 輪播圖 -->
     <script src="Slideshow.js"></script>
+    <!-- 今日強檔 -->
+    <script src="right_Discount.js"></script>
+    <!-- 熱銷排行榜 -->
+    <script src="bestsellers.js"></script>
 </body>
+
 </html>
