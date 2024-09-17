@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>夢裡都有</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="product-block_style.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/product-block_style.css">
 
     <!-- 思源黑體 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <!-- icon ->  fontawesome -->
     <script src="https://kit.fontawesome.com/a9eb98558e.js" crossorigin="anonymous"></script>
@@ -19,7 +17,7 @@
 </head>
 
 <body>
-    <!-- 導覽列 -->
+    <!-- {導覽列} -->
     <header class="TopHeader x">
         <nav class="myNav">
             <div class="leftMenu">
@@ -32,9 +30,9 @@
                 </form>
             </div>
             <ul class="rightMenu">
-                <li class="rightMenu_li"><a href="#">首頁</a></li>
-                <li class="rightMenu_li"><a href="#">登入</a></li>
-                <li class="rightMenu_li"><a href="#">註冊</a></li>
+                <li class="rightMenu_li"><a href="HTML/login.php">登入</a></li>
+                <li class="rightMenu_li"><a href="HTML/register.php">註冊</a></li>
+                <li class="rightMenu_li"><a href="HTML/member_information.php">會員中心</a></li>
                 <li class="rightMenu_li"><a href="#">購物車</a></li>
             </ul>
         </nav>
@@ -48,16 +46,16 @@
                 </a>
             </div>
             <ul class="rightMenu">
-                <li class="rightMenu_li"><a href="#">首頁</a></li>
-                <li class="rightMenu_li"><a href="#">登入</a></li>
-                <li class="rightMenu_li"><a href="#">註冊</a></li>
+                <li class="rightMenu_li"><a href="HTML/login.php">登入</a></li>
+                <li class="rightMenu_li"><a href="HTML/register.php">註冊</a></li>
+                <li class="rightMenu_li"><a href="HTML/member_information.php">會員中心</a></li>
                 <li class="rightMenu_li"><a href="#">購物車</a></li>
             </ul>
         </div>
     </div>
 
     <main>
-        <!-- 搜尋列 -->
+        <!-- {搜尋列} -->
         <div id="header_searchBar">
             <img id="logo_Large" src="image/夢裡都有icon_gb.png" alt="夢裡都有">
             <input id="search_main" type="search" placeholder="搜尋" autocomplete="off">
@@ -65,7 +63,7 @@
                 <img class="search_Btn_icon" src="image/magnifying-glass.png" alt="搜尋">
             </button>
         </div>
-        <!-- 小分類欄 -->
+        <!-- {小分類欄} -->
         <div id="small_Category">
             <div class="Left_Category_title">
                 <div class="Merge_Category_title1">
@@ -92,7 +90,7 @@
 
             </ul>
         </div>
-        <!-- 主要廣告與分類欄 -->
+        <!-- {主要廣告與分類欄} -->
         <!-- 左邊-商品分類 -->
         <div id="background_container">
             <div id="container">
@@ -801,15 +799,15 @@
     </main>
 
     <!-- 匯入jquery -->
-    <script src="jquery.min.js"></script>
+    <script src="JS/jquery.min.js"></script>
     <!-- 畫面往下移時，置頂nav -->
-    <script src="Top_nav_exchange.js"></script>
+    <script src="JS/index_TopNav_exchange.js"></script>
     <!-- 輪播圖 -->
-    <script src="Slideshow.js"></script>
+    <script src="JS/index_Slideshow"></script>
     <!-- 今日強檔 -->
-    <script src="right_Discount.js"></script>
+    <script src="JS/index_Right_Discount"></script>
     <!-- 熱銷排行榜 -->
-    <script src="bestsellers.js"></script>
+    <script src="JS/index_Bestsellers"></script>
 </body>
 
 </html>

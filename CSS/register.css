@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    
+    /* 隱藏水平和垂直捲軸 */
+    overflow: hidden; 
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* 變數設定 */
+:root{
+    --content_width: 380px
+}
+
+
+/* ---上方標題--- */
+
+.header_bg {
+    width: 100%;
+    height: 60px;
+}
+
+.header {
+    width: 1220px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    width: 200px;
+    height: 60px;
+    position: relative;
+}
+
+.img_logo {
+    width: 200px;
+    position: absolute;
+    background-image: url(../image/夢裡都有icon_gb.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    color: #464646;
+}
+
+.right:hover {
+    color: #4bb37a;
+}
+
+.topstyle {
+    width: 450px;
+    height: 40px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 15px 15px 0 0;
+    background-color: #4b745a;
+}
+
+
+
+/* ---註冊內容--- */
+
+.layout-center {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.register {
+    width: 450px;
+    height: 550px;
+    border-radius: 0 0 15px 15px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(25, 66, 35, 0.2);
+
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: var(--content_width);
+}
+
+#title {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #557656;
+}
+
+.Have_an_account {
+    width: var(--content_width);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.Have_an_account_column{
+    display: flex;
+    justify-content: center;
+}
+
+.tologin{
+    font-weight: bolder;
+    color: #0e6d31;
+}
+
+.errDiv{
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #e23434;
+}
+
+.errmargin{
+    margin-bottom: 5px;
+}
+
+/* ---填入資訊--- */
+.information{
+    height: 310px;
+}
+
+.blank_area{
+    width: 30px;
+}
+
+.fa-circle-check{
+    width: 30px;
+    text-align: center;
+    color: #0e6d31;
+}
+
+
+.Blank_line{
+    width: 100%;
+    height: 35px;
+}
+
+
+.warn{
+    padding-left: 80px;
+    color: #e23434;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+
+.fa-circle-xmark{
+    width: 30px;
+    text-align: center;
+}
+
+.input_group{
+    width: var(--content_width);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #524847;
+    font-weight: bold;
+}
+
+.no_margin{
+    margin-top: 5px;
+}
+
+.birthday_layout{
+    width: 264px;
+    height: 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#year,#month,#day{
+    width: 32%;
+    height: 25px;
+}
+
+.input_label{
+    display: inline-block;
+    width: 80px;
+    text-align:right;
+}
+
+.input_text{
+    width: 260px;
+    height: 20px;
+}
+
+
+
+
+/* ---按鈕--- */
+.btn_group{
+    width: var(--content_width);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#btn_register {
+    border-radius: 5px;
+    width: 150px;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 18px;
+    border: none;
+    background-color: #009393;
+    cursor: pointer;
+}
+
+#btn_register:hover{
+    background-color: #0093939f;
+}
+
+
+
+
+
+.x{
+    display: none;
+}
