@@ -6,20 +6,18 @@
 $("#newpwd_eye_control").click(function(){
     $(this).toggleClass("fa-eye").toggleClass("fa-eye-slash")
     if($(this).hasClass("fa-eye")){
-        $("#newpwd").attr("type","text")
-        
+        $("#input_newpwd").attr("type","text")
     }else if($(this).hasClass("fa-eye-slash")){
-        $("#newpwd").attr("type","password")
+        $("#input_newpwd").attr("type","password")
     };
 });
 // 密碼確認 眼睛控制
 $("#pwdcheck_eye_control").click(function(){
     $(this).toggleClass("fa-eye").toggleClass("fa-eye-slash")
     if($(this).hasClass("fa-eye")){
-        $("#pwdcheck").attr("type","text")
-        
+        $("#input_pwdcheck").attr("type","text")
     }else if($(this).hasClass("fa-eye-slash")){
-        $("#pwdcheck").attr("type","password")
+        $("#input_pwdcheck").attr("type","password")
     };
 });
 

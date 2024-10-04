@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>夢裡都有</title>
+    <!-- CSS樣式載入 -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/product-block_style.css">
-
     <!-- 思源黑體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <!-- icon ->  fontawesome -->
@@ -60,7 +60,7 @@
             <img id="logo_Large" src="image/夢裡都有icon_gb.png" alt="夢裡都有">
             <input id="search_main" type="search" placeholder="搜尋" autocomplete="off">
             <button class="search_Btn">
-                <img class="search_Btn_icon" src="image/magnifying-glass.png" alt="搜尋">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
         <!-- {小分類欄} -->
@@ -98,140 +98,96 @@
                     <div class="Merge_Category_title2"></div>
                     <ul class="aside_ul">
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-mobile-screen-button"></i>
                                 3C資訊
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">筆記型電腦</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">桌上電腦</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">螢幕</a>
-                                </li>
-                            </ul>
+                            <div class="Child_aside_container">
+                                <ul class="Child_aside_ul">
+                                    <li class="Child_aside_li_category"><label>手機/平板</label></li>
+                                    <li class="Child_aside_li"><a href="HTML/product.php?categoryID=1" class="Child_aside_a">安卓手機</a></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=2" class="Child_aside_a">iPhone</a></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=3" class="Child_aside_a">平板電腦</a></li>
+                                </ul>
+                                <ul class="Child_aside_ul">
+                                    <li class="Child_aside_li_category"><label>電腦/筆電</label></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=4" class="Child_aside_a">筆記型電腦</a></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=5" class="Child_aside_a">桌上型電腦</a></li>
+                                </ul>
+                                <ul class="Child_aside_ul">
+                                    <li class="Child_aside_li_category"><label>資訊週邊</label></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=6" class="Child_aside_a">滑鼠</a></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=7" class="Child_aside_a">鍵盤</a></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=8" class="Child_aside_a">隨身碟</a></li>
+                                    <li class="Child_aside_li"><a href="product.php?categoryID=9" class="Child_aside_a">耳機</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-tv"></i>
                                 生活家電
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">冰箱</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">除濕機</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">掃地機</a>
-                                </li>
-                            </ul>
+                            <div class="Child_aside_container">
+                                <ul class="Child_aside_ul">
+                                    <li class="Child_aside_li_category"><label>大型家電</label></li>
+                                    <li class="Child_aside_li"><a href="" class="Child_aside_a">冰箱</a></li>
+                                    <li class="Child_aside_li"><a href="" class="Child_aside_a">冷氣</a></li>
+                                    <li class="Child_aside_li"><a href="" class="Child_aside_a">洗衣機</a></li>
+                                </ul>
+                                <ul class="Child_aside_ul">
+                                    <li class="Child_aside_li_category"><label>生活專區</label></li>
+                                    <li class="Child_aside_li"><a href="" class="Child_aside_a">掃地機</a></li>
+                                    <li class="Child_aside_li"><a href="" class="Child_aside_a">除濕機</a></li>
+                                </ul>
+                                <ul class="Child_aside_ul">
+                                    <li class="Child_aside_li_category"><label>廚房專區</label></li>
+                                    <li class="Child_aside_li"><a href="" class="Child_aside_a">烤箱</a></li>
+
+                                </ul>
+                            </div>
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-hospital"></i>
                                 保健醫療
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">葉黃素</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">維他命</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">成人營養素</a>
-                                </li>
-                            </ul>
+                            <!-- 子類暫不展示 -->
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-bottle-droplet"></i>
                                 美妝保養
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">面膜</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">化妝水</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">乳液</a>
-                                </li>
-                            </ul>
+                            <!-- 子類暫不展示 -->
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-toilet-paper"></i>
                                 生活用品
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">衛生紙</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">衛生棉</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">紙尿褲</a>
-                                </li>
-                            </ul>
+                            <!-- 子類暫不展示 -->
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-couch"></i>
                                 家居餐廚
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">沙發</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">床架</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">層架</a>
-                                </li>
-                            </ul>
+                            <!-- 子類暫不展示 -->
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-bowl-food"></i>
                                 食品生鮮
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">罐頭食品</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">泡麵</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">零食</a>
-                                </li>
-                            </ul>
+                            <!-- 子類暫不展示 -->
                         </li>
                         <li class="aside_li">
-                            <a class="aside_a" href="">
+                            <a class="aside_a">
                                 <i class="fa-solid fa-glasses"></i>
                                 時尚精品
                             </a>
-                            <ul class="Child_aside_ul">
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">女裝</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">男裝</a>
-                                </li>
-                                <li class="aside_li">
-                                    <a href="" class="aside_a">童裝</a>
-                                </li>
-                            </ul>
+                            <!-- 子類暫不展示 -->
                         </li>
                     </ul>
                 </aside>
@@ -791,7 +747,23 @@
 
         <div id="background_footer">
             <footer>
-
+                <p class="footer_alert">此網站用於練習製作購物網站用，以上圖片都未授權，內容僅當範例展示用，謝謝。</p>
+                <div class="footer_container">
+                    <ul class="footer_ul">
+                        <li class="footer_li_title">關於我們</li>
+                        <li class="footer_li"><a href="">網站介紹</a></li>
+                    </ul>
+                    <ul class="footer_ul">
+                        <li class="footer_li_title">會員權益</li>
+                        <li class="footer_li"><a href="">客戶隱私權政策</a></li>
+                        <li class="footer_li"><a href="">防詐騙宣導</a></li>
+                    </ul>
+                    <ul class="footer_ul">
+                        <li class="footer_li_title">客戶服務</li>
+                        <li class="footer_li"><a href="">FAQ 常見問題</a></li>
+                    </ul>
+                    <img src="image/iconSky.png" alt="" class="footer_img">
+                </div>
             </footer>
         </div>
 
@@ -803,11 +775,11 @@
     <!-- 畫面往下移時，置頂nav -->
     <script src="JS/index_TopNav_exchange.js"></script>
     <!-- 輪播圖 -->
-    <script src="JS/index_Slideshow"></script>
+    <script src="JS/index_Slideshow.js"></script>
     <!-- 今日強檔 -->
-    <script src="JS/index_Right_Discount"></script>
+    <script src="JS/index_Right_Discount.js"></script>
     <!-- 熱銷排行榜 -->
-    <script src="JS/index_Bestsellers"></script>
+    <script src="JS/index_Bestsellers.js"></script>
 </body>
 
 </html>

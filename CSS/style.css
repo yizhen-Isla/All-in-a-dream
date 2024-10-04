@@ -31,7 +31,7 @@ a{
 }
 
 ul{
-    list-style: none;
+    list-style: none; /* list前面不要黑點 */
 }
 
 
@@ -41,14 +41,13 @@ ul{
 .TopHeader, .initial_header {
     width: 100%;
     height: 48px;
-    background-color:rgba(68, 64, 64, 0.87);
+    background-color:rgb(97, 91, 91);
 }
 /* .TopHeader用來控制「固定的最上方Nav」 隱藏顯示 */
 .x {
     display: none;
 }
 .sticky {
-    background-color:rgb(68, 64, 64);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -131,8 +130,7 @@ ul{
     width: 45%;
     height: 45px;
     display: flex;
-    justify-content: flex-end; /*設定靠右對齊 */
-    list-style: none;   /* list前面不要黑點 */
+    justify-content: flex-end; /*設定靠右對齊 */   
     line-height: 48px;
 }
 
@@ -200,10 +198,6 @@ ul{
     cursor: pointer;
 }
 
-.search_Btn_icon{
-    width: 18px;
-    height: 15px;
-}
 
 /* 小分類欄------------------------------------------------------------- */
 
@@ -224,18 +218,19 @@ ul{
 }
 
 .Merge_Category_title1{
-    width: 195px;
+    width: 190px;
     height: 40px;
     background-color: #6e5548;
     display: flex;
     align-items: flex-end;
     position: absolute;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .img_bar{
     width: 22px;
     height: 18px;
+    padding-bottom: 3px;
 }
 
 .Category_text{
@@ -312,9 +307,6 @@ ul{
     box-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 
-.aside_ul{
-    list-style: none;
-}
 
 .aside_li{
     width: 188;
@@ -329,9 +321,9 @@ ul{
     content: '';
     position: absolute;
     border-top: 1px solid #838383be;
+    top: 0;
     left: 12px;
     right: 12px;
-    top: 0;
 }
 
 
@@ -343,6 +335,7 @@ ul{
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 14px;
+    user-select: none;
 }
 
 .aside_li:hover{
@@ -363,20 +356,64 @@ ul{
 }
 
 /* 分類子層 */
-.Child_aside_ul{
+.Child_aside_container{
     display: none;
     position: absolute;
-    width: 200px;
-    top: 6px;
+    width: 795px;
+    top: 5px;
     left: 100%;
-    background-color: #6e5548de;;
+    border: 3px solid #6e5548;
+    background-color: #ffffffee;
     box-shadow: 2px 4px 10px hsla(240, 40%, 15%, .6) ;
     z-index: 1;
 }
+.Child_aside_ul{
+    display: flex; 
+}
 
-/* .aside_li 跟 .aside_a 按照母層  */
+.Child_aside_li_category{
+    width: 120px;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    background-color: #6d6054d0;
+}
 
-.aside_li:hover >.Child_aside_ul{
+.Child_aside_li{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.Child_aside_li::before{  
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #dadada;
+}
+.Child_aside_ul:last-child > li::before{  
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 20px;
+    border: 1px solid #dadada;
+}
+
+.Child_aside_ul > li{
+    padding: 20px 20px 0px 20px;
+}
+.Child_aside_ul:last-child > li{
+    padding: 20px 20px 20px 20px;
+}
+
+.Child_aside_a:hover{
+    color: #699e72;
+}
+
+.aside_li:hover >.Child_aside_container{
     display: block;
 }
 
@@ -500,7 +537,6 @@ ul{
 .bestsellers_container{
     width: 1220px;
     height: 300px;
-    background-color: rgb(255, 226, 59);
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -513,7 +549,8 @@ ul{
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #A6B37D;
+    /* background-color: #A6B37D; */
+    background-color: #a6b37d;
     display: flex;
 }
 
@@ -585,7 +622,7 @@ ul{
 .bestsellers_TabContent{
     width: 100%;
     height: 250px;
-    background-color: #FEFAE0;
+    background-color: #ece7c7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -634,16 +671,58 @@ ul{
 /* 頁尾------------------------------------------------------------- */
 #background_footer{
     width: 100%;
-    height: 300px;
+    height: 320px;
     background-color: #AAB396;
 }
 
 footer{
     width: 1220px;
-    height:300px;
-    border: 2px solid #FFF;
+    height:320px;
     display: flex;
+    flex-direction: column;
     margin: auto;
     left: 0;
     top: 0;
+}
+
+.footer_alert{
+    width: 1000px;
+    height: 60px;
+    margin: 50px 110px 30px 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #68776c;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #68776c;
+    font-weight: 600;
+}
+
+.footer_container{
+    display: flex;
+    margin: 0 110px;
+}
+
+.footer_ul{
+    display: flex; 
+    flex-direction: column;
+    flex: 1; /* 每個ul平均分配空間 */
+    line-height: 36px;
+}
+
+.footer_li_title{
+    font-size: 22px;
+    font-weight: 600;
+    color: #413838;
+    margin-bottom: 10px;
+}
+
+.footer_li{
+    font-size: 18px;
+}
+
+.footer_img{
+    width: 200px;
+    height: 160px;
 }

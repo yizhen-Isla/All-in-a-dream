@@ -1,16 +1,25 @@
 // 更新個人資料
-$("#btn_change_info").on(click,function(){
+$("#btn_change_info").on("click",function(){
     if(check_info()){
-        // 驗證成功後提交表單
+        let sex = $("input[name='radio_btn_sex']:checked").val();
+        $("#choose_sex").val(sex)
+        if(confirm('確定更新個人資料嗎？')){
+            // 驗證成功後提交表單
+        $("#update_form").append('<input type="hidden" name="update_info" value="true">'); // 添加 hidden 字段
         $("#update_form").submit(); 
+        };
     };
+    
 });
 
 // 更新密碼
-$("#btn_change_pwd").on(click,function(){
-    if(check_pwd()){
-        // 驗證成功後提交表單
+$("#btn_change_pwd").on("click",function(){
+    if(check_pwd($("#input_newpwd").val(), $("#input_pwdcheck").val())){
+        if(confirm('確定更新密碼嗎？')){
+            // 驗證成功後提交表單
+            $("#update_form").append('<input type="hidden" name="update_pwd" value="true">'); // 添加 hidden 字段
         $("#update_form").submit(); 
+        };
     };
 });
 
@@ -19,11 +28,50 @@ $("#btn_change_pwd").on(click,function(){
 
 // 確認個人資料 function
 function check_info(){
-
+    //姓名
+    if ($("#input_name").val() == "") {
+        alert("請輸入姓名!");
+        return false;
+    }
+    //性別
+    let sex = $("input[name='radio_btn_sex']:checked").val();
+    if (sex == "" || sex == undefined) {
+        alert("請選擇性別!");
+        return false;
+    }
+    
+    //生日
+    var birthday = $('#input_birthday').val();
+    if (birthday == "") {
+        alert("請輸入生日!");
+        return false;
+    }
+    if (!verify_birthday(birthday)) {
+        alert("生日格式錯誤或日期無效，請使用YYYY-MM-DD格式!");
+        return false;
+    }
+    //電話
+    var phone = $('#input_phone').val();
+    if ($("#input_phone").val() == "") {
+        alert("請輸入電話號碼!");
+        return false;
+    }else if(!verify_phone(phone)) {
+        alert("電話號碼需填寫10個數字!");
+        return false;
+    }
+    //地址
+    if ($("#input_address").val() == "") {
+        alert("請輸入地址!");
+        return false;
+    }
+    return true;
 }
 
 // 確認密碼 function
 function check_pwd(pw1, pw2) {
+    console.log(pw1);
+    console.log(pw2);
+
     if (pw1 == '') {
         alert("密碼不可以空白!");
         return false;
@@ -69,141 +117,41 @@ function check_pwd(pw1, pw2) {
 
 // ----------------------------------------------
 
-function verify_name(){
-    if ($("#input_Name").val() == "") {
-        alert("請輸入姓名!");
-        return false;
-    }
-}
-function verify_sex(){
-    if ($("#input_sex").val() == "") {
-        alert("請選擇性別!");
-        return false;
-    }
-}
-function verify_birthday(){
-    if ($("#input_birthday").val() == "") {
-        alert("請輸入生日!");
-        return false;
-    }
 
+function verify_birthday(birthday){
+    // 正則表達式驗證格式 YYYY-MM-DD
+    var pattern = /^\d{4}-\d{2}-\d{2}$/;
+    if (pattern.test(birthday)) {
+        // 將生日拆解為 年、月、日
+        var parts = birthday.split("-");
+        var year = parseInt(parts[0], 10); //10代表十進制
+        var month = parseInt(parts[1], 10);
+        var day = parseInt(parts[2], 10);
 
-    var birthday = $('#birthday').val();
-
-    if (validateBirthday(birthday)) {
-        alert("生日格式正確且有效!");
-    } else {
-        alert("生日格式錯誤或日期無效，請使用YYYY-MM-DD格式!");
-    }
-    // 驗證生日格式和有效性
-    function validateBirthday(birthday) {
-        // 正則表達式驗證格式 YYYY-MM-DD
-        var pattern = /^\d{4}-\d{2}-\d{2}$/;
-
-        if (pattern.test(birthday)) {
-            // 將生日拆解為 年、月、日
-            var parts = birthday.split("-");
-            var year = parseInt(parts[0], 10);
-            var month = parseInt(parts[1], 10);
-            var day = parseInt(parts[2], 10);
-
-            // 使用 JavaScript 的 Date 對象檢查日期有效性
-            var date = new Date(year, month - 1, day);  // month 在 Date 中是 0-based
-            if (date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day) {
-                return true; // 日期有效
-            } else {
-                return false; // 日期格式正確，但日期無效
-            }
+        // 使用 JavaScript 的 Date 對象檢查日期有效性
+        var date = new Date(year, month - 1, day);  // month 在 Date 中，0 代表 1 月，11 代表 12 月。
+        if (date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day) {
+            return true; // 日期有效
         } else {
-            return false;  // 格式錯誤
+            return false; // 日期格式正確，但日期無效
         }
-    }
-}
-function verify_phone(){
-
-}
-function verify_address(){
-
-}
-
-
-
-function checkForm() {
-    // 姓名欄位確認
-    if ($("#input_Name").val() == "") {
-        $(".warn_name").removeClass("x");
-        $(".success_name").addClass("x");
-        $("#input_Name").focus();
-        return false;
     } else {
-        $(".warn_name").addClass("x");
-        $(".success_name").removeClass("x");
+        return false;  // 格式錯誤
     }
-
-
-    // 生日欄位確認-在Birthday.js
-    // 表單提交前，先將生日組合成字串 (年/月/日)
-
-    let year = $('#year').val();
-    let month = $('#month').val();
-    let day = $('#day').val();
-
-    // 檢查是否所有選項都被選擇
-    if (year === "" || month === "" || day === "") {
-        $(".warn_birthday").removeClass("x");
-        $(".success_birthday").addClass("x");
-        return false; // 防止表單提交
-    } else {
-        $(".warn_birthday").addClass("x");
-        $(".success_birthday").removeClass("x");
-    }
-    let birthday = year + '-' + month + '-' + day;
-    $("#m_birthday").val(birthday);
-
-
-
-
-    // Email欄位確認
-    if ($("#input_Email").val() == "") {
-        $(".warn_text_Email").text("請輸入您的 Email!");
-        $(".warn_Email").removeClass("x");
-        $(".success_Email").addClass("x");
-        $("#input_Email").focus();
-        return false;
-    } else if (!checkmail($("#input_Email"))) {
-        $("#input_Email").focus();
-        return false;
-    } else {
-        $(".warn_Email").addClass("x");
-        $(".success_Email").removeClass("x");
-    }
-
-
-    // 設定密碼欄位 與 密碼確認欄位 確認
-    if (!check_passwd($("#input_Pwd").val(), $("#input_checkPwd").val())) {
-        $("#input_Pwd").focus();
-        return false;
-    }
-
-
-    return confirm('確定送出嗎？');
 
 }
 
-
-
-// 確認電郵 function
-function checkmail(myEmail) {
-    let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if (filter.test($(myEmail).val())) {
+function verify_phone(phone){
+    var pattern = /^\d{10}$/;
+    if (pattern.test(phone)) {
         return true;
-    } else {
-        $(".warn_text_Email").text("電子郵件格式不正確!");
-        $(".warn_Email").removeClass("x");
-        $(".success_Email").addClass("x");
+    }else{
         return false;
     }
 }
+
+
+    
 
 
 

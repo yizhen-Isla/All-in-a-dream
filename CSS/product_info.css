@@ -1,0 +1,384 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+:root {
+    --Main_color: #699e72;
+    --Secondary_color: rgb(97, 91, 91);
+    --product_w: 180px;
+    --content_width: 1220px;
+}
+
+
+
+/* 導覽列------------------------------------------------------------- */
+
+/* 固定背景 */
+.TopHeader, .initial_header {
+    width: 100%;
+    height: 48px;
+    background-color: var(--Secondary_color);
+}
+/* .TopHeader用來控制「固定的最上方Nav」 隱藏顯示 */
+.x {
+    display: none;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+
+.myNav{
+    width: var(--content_width);
+    height: 48px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+#TOP_form{
+    margin-left: 15px;
+}
+
+/* ----左邊---- */
+.leftMenu{
+    /* position: absolute; */
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.leftMenu_a {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none; /* 文字不要有樣式*/
+    font-size: large;
+}
+
+
+.fa-house{
+    padding-right: 15px;
+}
+
+#logo_Small{
+    width: 150px;
+    height: 45px;
+}
+
+#TOP_form{
+    margin-left: 50px;
+    display: flex;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+}
+
+
+#search_Top{
+    width: 350px;
+    padding-left: 15px;
+}
+#button_Top{
+    width: 50px;
+    cursor: pointer;
+}
+#search_Top, #button_Top{
+    color: #FFF;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 30px;
+}
+#search_Top:focus, #button_Top:focus{
+    outline: none; /* 點選到時，不要出現外框 */
+}
+
+
+/* ----右邊---- */
+.rightMenu{
+    width: 45%;
+    height: 45px;
+    display: flex;
+    justify-content: flex-end; /*設定靠右對齊 */
+    list-style: none;   /* list前面不要黑點 */
+    line-height: 48px;
+}
+
+.rightMenu_li{
+    position: relative;
+    width: 90px;
+    text-align: center;
+} 
+
+.rightMenu_li::before{
+    content: '';
+    position: absolute;
+    left: 0;  /* 確保在左側 */
+    top: 10px;
+    bottom: 5px;
+    border-left: 1px solid #ffffff;
+} 
+
+.rightMenu_li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+}
+
+.leftMenu_a:hover, .rightMenu_li a:hover{
+    color: #699e72
+} 
+
+/* 搜尋列------------------------------------------------------------- */
+#header_searchBar{
+    width: var(--content_width);
+    height: 140px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+#logo_Large{
+    margin-right: 100px;
+    width: 350px;
+    height: 100px;
+}
+
+#search_main{
+    width: 350px;
+    height: 35px;
+    top: 50%;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    padding-left: 12px;
+    font-size: 16px;
+}
+
+.search_Btn{
+    padding: 5px;
+    width: 40px;
+    height: 35px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    cursor: pointer;
+}
+
+.advert{
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+
+}
+
+.advert_img{
+    width: 230px;
+    height: 120px;
+}
+
+/* ---分類列--- */
+.category_row{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(161, 160, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category_ul{
+    width: var(--content_width);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.category_li{
+    width: 150px;
+    height: 100%;
+    position: relative
+}
+
+.category_li::before,.first_li::after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 5px;
+}
+
+.category_li::before{
+    right: 0;
+    border-right: 1px solid #FFF;
+}
+
+.first_li::after{
+    left: 0;
+    border-left: 1px solid #FFF;
+}
+
+.category_a{
+    display: block;
+    padding-left: 0.1%;
+    width: 99%;
+    height: 100%;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.category_a:hover{
+    background-color: rgb(128, 120, 120);
+}
+
+
+
+/* 子 */
+.Child_category_container{
+    width: 510px;
+    height: 300px;
+    border: 5px solid rgb(97, 91, 91);
+    background-color: rgb(158, 149, 149);
+    display: none;
+}
+
+.category_li:hover >.Child_category_container{
+    display: flex;
+}
+
+.BGC{
+    background-color: rgb(128, 120, 120);
+}
+
+.Child_category_ul{
+    position: relative;
+}
+
+.Child_category_ul ~ ul::before{
+    content: '';
+    position: absolute;
+    left:0;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid rgb(126, 123, 123);
+}
+
+.Child_category_li{
+    width: 170px;
+    height: 40px;
+    
+}
+.Child_category_label{
+    padding-left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #dad9d9;
+    background-color: rgb(119, 112, 112);
+}
+
+.Child_category_a{
+    width: 150px;
+    height: 100%;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.Child_category_a:hover{
+    /* background-color: rgba(119, 112, 112, 0.829); */
+    color: #FFF;
+}
+
+
+
+/* -----商品----- */
+
+.product_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 麵包屑 */
+.prd_bread_crumbs{
+    width: var(--content_width);
+    margin: 20px 0;
+}
+
+.fa-location-dot{
+    margin-right: 10px;
+    color: #666666;
+}
+
+.bread_crumbs{
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 商品詳細資訊 */
+
+.product_block{
+    width: var(--content_width);
+    padding: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product_img{
+    width: 400px;
+    height: 350px;
+    background-color: aquamarine;
+}
+.info_container{
+    width: 730px;
+    height: 350px;
+    margin-left: 30px;
+    background-color: chocolate;
+}
+.product_name{
+    width: 100%;
+    height: 60px;
+    background-color: #666666;
+}
+.product_info{
+    width: 100%;
+    height: 160px;
+    background-color: #e45858;
+}
+.product_price{
+    width: 100%;
+    height: 60px;
+    background-color: #666666;
+}
+.product_quantity{
+
+}
+#sumit_shopping_cart{
+
+}

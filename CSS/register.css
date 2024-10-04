@@ -72,7 +72,7 @@ a {
     width: 450px;
     height: 40px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 15px 15px 0 0;
     background-color: #4b745a;
 }
@@ -202,6 +202,9 @@ form {
 #year,#month,#day{
     width: 32%;
     height: 25px;
+    color: #524847;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .input_label{
@@ -213,6 +216,10 @@ form {
 .input_text{
     width: 260px;
     height: 20px;
+    padding-left: 3px;
+    color: #524847;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 

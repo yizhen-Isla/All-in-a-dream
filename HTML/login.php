@@ -7,10 +7,10 @@ session_start();
 // $_SESSION["loginLevel"] 紀錄登入者的等級(member、admin)
 
 // 檢查登入狀態
-if (isset($_SESSION["loginMember"]) && ($_SESSION["loginMember"] != "")) {
+if (isset($_SESSION["loginMember"]) && ($_SESSION["loginMember"]!= "")) {
     // 帳號為member身份
     if ($_SESSION["loginLevel"] == "member") {
-        header("Location: ../index.html");
+        header("Location: member_information.php");
     } else { // 非member - admin身份
         header("Location: member_admin.php");
     }
@@ -73,7 +73,7 @@ if (isset($_POST["useremail"]) && isset($_POST["userpwd"])) {
             header("Location: member_admin.php");
         }
     } else { //登入失敗就重新載入原頁
-        header("Location: login.php?errMsg=1");
+            header("Location: login.php?errMsg=1");
     }
 }
 ?>
@@ -85,7 +85,10 @@ if (isset($_POST["useremail"]) && isset($_POST["userpwd"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS樣式載入 -->
     <link rel="stylesheet" href="../CSS/login_style.css">
+    <!-- 思源黑體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <!-- icon ->  fontawesome -->
     <script src="https://kit.fontawesome.com/a9eb98558e.js" crossorigin="anonymous"></script>
 </head>
@@ -106,16 +109,14 @@ if (isset($_POST["useremail"]) && isset($_POST["userpwd"])) {
         <div class="login">
             <form method="post" action="">
                 <h1 id="title">會員登入</h1>
-
                 <?php if (isset($_GET["errMsg"]) && ($_GET["errMsg"] == "1")) { ?>
                     <div class="warn">
                         <p id="test">帳號或密碼錯誤!</p>
                     </div>
                 <?php } ?>
-
                 <div class="input_group">
-                    <input type="text" name="useremail" id="user_id" class="input_text" placeholder="帳號" value="<?php if (isset($_COOKIE["remUser"]) && ($_COOKIE["remUser"] != "")) echo $_COOKIE["remUser"]; ?>">
-                    <label for="user_id" class="input_label">帳號</label>
+                    <input type="text" name="useremail" id="user_email" class="input_text" placeholder="帳號" value="<?php if (isset($_COOKIE["remUser"]) && ($_COOKIE["remUser"] != "")) echo $_COOKIE["remUser"]; ?>">
+                    <label for="user_email" class="input_label">帳號</label>
                 </div>
                 <div class="input_group">
                     <input type="password" name="userpwd" id="user_password" class="input_text" placeholder="密碼" value="<?php if (isset($_COOKIE["remPass"]) && ($_COOKIE["remPass"] != "")) echo $_COOKIE["remPass"]; ?>">
@@ -127,7 +128,7 @@ if (isset($_POST["useremail"]) && isset($_POST["userpwd"])) {
                         <label for="checkbox_remember" class="remember_group">記住帳號密碼</label>
                     </div>
 
-                    <a href="" class="forget">忘記密碼</a>
+                    <a href="forget_pwd.php" class="forget">忘記密碼</a>
                 </div>
                 <div class="btn_group">
                     <input type="button" class="btn" id="btn_register" value="註冊">
@@ -144,7 +145,6 @@ if (isset($_POST["useremail"]) && isset($_POST["userpwd"])) {
             // 按註冊按鈕跳至註冊網站
             $('#btn_register').click(function() {
                 event.preventDefault(); // 阻止按鈕的預設行為 (如表單提交)
-                console.log('按鈕已被點擊');
                 window.location.href = 'register.php';
             });
         });

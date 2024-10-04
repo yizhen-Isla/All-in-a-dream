@@ -34,28 +34,33 @@ function GetSQLValueString($theValue, $theType)
 if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
     // [更新]
     if (isset($_POST["update_info"])) {
-        $query_update = "UPDATE memberdata SET m_name=?, m_email=?, m_passwd=?, m_sex=?, m_birthday=?, m_phone=?, m_address=? WHERE m_id=?";
+        $query_update = "UPDATE memberdata SET m_name=?, m_sex=?, m_birthday=?, m_phone=?, m_address=? WHERE m_id=?";
         $stmt = $db_link->prepare($query_update); // 創建預處理語句   
         //綁定參數
-        $stmt->bind_param(
-            "issssss",
-            GetSQLValueString($_POST["m_id"], 'int'),
-            GetSQLValueString($_POST["m_name"], 'string'),
-            GetSQLValueString($_POST["m_email"], 'email'),
-            GetSQLValueString($_POST["m_sex"], 'string'),
-            GetSQLValueString($_POST["m_birthday"], 'string'),
-            GetSQLValueString($_POST["m_phone"], 'string'),
-            GetSQLValueString($_POST["m_address"], 'string'),
-        );
+        $m_name = GetSQLValueString($_POST["m_name"], 'string');
+        $choose_sex = GetSQLValueString($_POST["choose_sex"], 'string');
+        $m_birthday = GetSQLValueString($_POST["m_birthday"], 'string');
+        $m_phone= GetSQLValueString($_POST["m_phone"], 'string');
+        $m_address= GetSQLValueString($_POST["m_address"], 'string');
+        $m_id = GetSQLValueString($_POST["m_id"], 'int');
+        $stmt->bind_param("sssssi",$m_name,$choose_sex,$m_birthday,$m_phone,$m_address,$m_id);
         $stmt->execute();  // 執行預處理
         $stmt->close();  // 關閉預處理
     } elseif (isset($_POST["update_pwd"])) {
-        if (($_POST["m_passwd"] != "") && ($_POST["m_passwd"] == $_POST["m_passwdrecheck"])) {
-            $query_update = "UPDATE memberdata SET m_passwd=?,  WHERE m_id=?";
-            $stmt = $db_link->prepare($query_update); // 創建預處理語句 
+        echo '<pre>';
+            print_r($_POST["m_passwd"]);
+            print_r($_POST["m_passwdcheck"]);
+            echo '</pre>';
+        if (($_POST["m_passwd"] != "") && ($_POST["m_passwd"] == $_POST["m_passwdcheck"])) {
+            echo '<pre>';
+            print_r("進去了");
+            echo '</pre>';
+            $query_update_pwd = "UPDATE memberdata SET m_passwd=?  WHERE m_id=?";
+            $stmt = $db_link->prepare($query_update_pwd); // 創建預處理語句 
             $stmt->bind_param(
-                "s",
-                password_hash($_POST["m_passwd"], PASSWORD_DEFAULT) // 密碼加密
+                "si",
+                password_hash($_POST["m_passwd"], PASSWORD_DEFAULT), // 密碼加密
+                GetSQLValueString($_POST["m_id"], 'int')
             );
             $stmt->execute();  // 執行預處理
             $stmt->close();  // 關閉預處理 
@@ -84,11 +89,12 @@ echo '</pre>';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS樣式載入 -->
     <link rel="stylesheet" href="../CSS/member_information.css">
-    <!-- icon ->  fontawesome -->
-    <script src="https://kit.fontawesome.com/a9eb98558e.js" crossorigin="anonymous"></script>
     <!-- 思源黑體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon ->  fontawesome -->
+    <script src="https://kit.fontawesome.com/a9eb98558e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -131,11 +137,11 @@ echo '</pre>';
                         <label class="information_title">性別：</label>
                         <div class="sex_container">
                             <div class="female_container">
-                                <input type="radio" name="radio_btn" class="sex_radio" id="input_female" name="m_sex" value="<?php if($row_RecMember["m_sex"] == "Female") echo "checked";?>">
+                                <input type="radio" name="radio_btn_sex" class="sex_radio" id="input_female" name="m_sex" value="Female" <?php if($row_RecMember["m_sex"] == "Female") echo "checked";?>>
                                 <label for="female" class="sex_text">女性</label>
                             </div>
                             <div class="male_container">
-                                <input type="radio" name="radio_btn" class="sex_radio" id="input_male" name="m_sex" value="<?php if($row_RecMember["m_sex"] == "male") echo "checked";?>">
+                                <input type="radio" name="radio_btn_sex" class="sex_radio" id="input_male" name="m_sex" value="Male" <?php if($row_RecMember["m_sex"] == "Male") echo "checked";?>>
                                 <label for="male" class="sex_text">男性</label>
                             </div>
                         </div>
@@ -154,27 +160,30 @@ echo '</pre>';
                     </div>
                 </div>
                 <div class="btn_group">
-                    <input type="button" id="btn_change_info" class="btn" name="update_info" value="更新資料">
+                    <input type="button" id="btn_change_info" class="btn" value="更新資料">
                 </div>
             </div>
             <div class="right_information">
                 <label for="" class="change_pwd_title">修改登入密碼</label>
                 <div class="pwd_group">
                     <label for="newpwd" class="pwd_title">新密碼：</label>
-                    <input type="password" class="pwd_text" id="newpwd">
+                    <input type="password" class="pwd_text" id="input_newpwd" name="m_passwd">
                     <!-- 眼睛開 fa-eye -->
                     <!-- 眼睛關 fa-eye-slash -->
                     <i id="newpwd_eye_control" class="fa-regular fa-eye-slash"></i>
                 </div>
                 <div class="pwd_group">
                     <label for="pwdcheck" class="pwd_title">密碼確認：</label>
-                    <input type="password" class="pwd_text" id="pwdcheck">
+                    <input type="password" class="pwd_text" id="input_pwdcheck" name="m_passwdcheck">
                     <i id="pwdcheck_eye_control" class="fa-regular fa-eye-slash"></i>
                 </div>
                 <div class="btn_group_pwd">
-                    <input type="button" id="btn_change_pwd" class="btn" name="update_pwd" value="變更密碼">
+                    <input type="button" id="btn_change_pwd" class="btn" value="變更密碼">
                 </div>
             </div>
+            <input name="action" type="hidden" id="action" value="update">
+            <input name="m_id" type="hidden" id="m_id" value="<?php echo $row_RecMember["m_id"];?>">
+            <input name="choose_sex" type="hidden"  id="choose_sex" value="">
         </form>
     </div>
 

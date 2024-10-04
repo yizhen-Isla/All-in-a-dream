@@ -34,7 +34,7 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
     } else {
         // [如果電子郵件不存在，則新增使用者資料]
         // $query_insert = SQL語法，插入一筆新的使用者資料
-        $query_insert = "INSERT INTO memberdata (m_name, m_passwd, m_sex, m_birthday, m_email, m_phone, m_address, m_jointime) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
+        $query_insert = "INSERT INTO memberdata (m_name, m_email, m_passwd, m_sex, m_birthday, m_phone, m_address, m_jointime) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
 
         $stmt = $db_link->prepare($query_insert); // 創建預處理語句
         //綁定參數，都為string
@@ -63,7 +63,10 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- CSS樣式載入 -->
     <link rel="stylesheet" href="../CSS/register.css">
+    <!-- 思源黑體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <!-- icon ->  fontawesome -->
     <script src="https://kit.fontawesome.com/a9eb98558e.js" crossorigin="anonymous"></script>
 </head>
@@ -121,7 +124,7 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
                     <div class="input_group">
                         <label for="year" class="input_label">生日：</label>
                         <div class="birthday_layout">
-                            <select name="year" id="year">
+                            <select name="year" id="year";>
                                 <option value="" hidden>西元年</option>
                             </select>
                             <select name="month" id="month">
